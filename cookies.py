@@ -80,8 +80,8 @@ class Cookies(object):
 
     def getCookieFile(self):
         try:
-            import xbmc, xbmcaddon
-            base = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('profile'))
+            import xbmcvfs, xbmcaddon
+            base = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo('profile'))
         except:
             base = os.getcwd()
         return os.path.join(base, 'cookies.lwp')

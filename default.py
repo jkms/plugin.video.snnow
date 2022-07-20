@@ -5,7 +5,7 @@ from builtins import str
 import snnow
 from settings import log
 from adobe import AdobePass
-import xbmc, xbmcplugin, xbmcgui, xbmcaddon, os, urllib.request, urllib.parse, urllib.error, urllib.parse
+import xbmc, xbmcvfs, xbmcplugin, xbmcgui, xbmcaddon, os, urllib.request, urllib.parse, urllib.error, urllib.parse
 import inputstreamhelper
 __settings__ = xbmcaddon.Addon(id='plugin.video.snnow')
 __language__ = __settings__.getLocalizedString
@@ -160,7 +160,7 @@ def getChannelStream(channelId, channelName, msoName):
 if len(sys.argv[2]) == 0:
 
     # create the data folder if it doesn't exist
-    data_path = xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('profile'))
+    data_path = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo('profile'))
     if not os.path.exists(data_path):
         os.makedirs(data_path)
 
